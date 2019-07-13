@@ -1,0 +1,182 @@
+<!-- ** note : please paste the common layout for all component ********-->
+<!--** common layout start ** -->
+<div class="container-fluid dashboard-root p-0" [class]="authService.globalSidebarLeft?'container-fluid dashboard-root p-0 right-close left-open ':(authService.globalSidebarRight?' container-fluid dashboard-root p-0 right-open left-close':'container-fluid dashboard-root p-0 left-close right-close')">
+  <div class="left-sidenav">
+    <app-leftmenu></app-leftmenu>
+  </div>
+  <div class="main-section">
+    <app-header></app-header>
+    <div class="bg-dashboard" slimScroll [options]="opts" style="height: 820px;">
+      <div class="row bg-dashboard">
+        <div class="col">
+          <div class="dashboard-body p-2">
+            <!-- common layout end -->
+            <div class="row kyc-from-page">
+              <div class="col-12 payment_div">
+                <span class="payment_span">
+                  <h2><i class="fa fa-angle-left" aria-hidden="true"></i> KYC Verification</h2>
+                </span>
+              </div>
+              <div class="col-12 p-4 payment_inner">
+                <h3>Personal Details</h3>
+                <p>Kindly ensure the details you provide match your Passport</p>
+
+                <form  [formGroup]="kycForm" (ngSubmit)="kycSubmit()" class="keepook-form">
+
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                      <div class="form-group input-field">
+                        <input class="form-control" formControlName="firstName" id="firstName" name="firstName" required
+                          placeholder="" type="text" />
+                        <label for="firstName">First Name</label>
+                        <span *ngIf="!kycForm.controls['firstName'].valid && (kycForm.controls['firstName'].dirty && kycForm.controls['firstName'].touched)"
+                              class="col-sm-12 form-input-error pt-1 new-pwd">First name required</span>
+                      </div>
+                      <div class="form-group input-field">
+                        <div class="input-group inputdate-picker d-inline-flex ">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" formControlName="dateOfBirth"  ngbDatepicker #d="ngbDatepicker">
+                            <div class="input-group-append">
+                              <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"> <i class="fa fa-calendar" aria-hidden="true"></i></button>
+                            </div>
+                          <span *ngIf="!kycForm.controls['dateOfBirth'].valid && (kycForm.controls['dateOfBirth'].dirty && kycForm.controls['dateOfBirth'].touched)"
+                                class="col-sm-12 form-input-error pt-1 new-pwd">Date Of Birth required</span>
+                          </div>
+
+                      </div>
+                      <div class="form-group input-field">
+                        <input class="form-control" formControlName="address" id="address" name="address" placeholder=""
+                          type="text" />
+                        <label for="address">Address Line</label>
+                        <span *ngIf="!kycForm.controls['address'].valid && (kycForm.controls['address'].dirty && kycForm.controls['country'].touched)"
+                              class="col-sm-12 form-input-error pt-1 new-pwd">Address required</span>
+                      </div>
+                      <div class="form-group input-field">
+                        <input class="form-control" formControlName="country" id="country" name="country" placeholder=""
+                          type="text" />
+                        <label for="country">Country</label>
+                        <span *ngIf="!kycForm.controls['country'].valid && (kycForm.controls['country'].dirty && kycForm.controls['address'].touched)"
+                              class="col-sm-12 form-input-error pt-1 new-pwd">Country required</span>
+                      </div>
+                      <div class="form-group input-field">
+                        <input class="form-control" formControlName="passportNumber" id="passportNumber" name="passportNumber"
+                          placeholder="" type="text" />
+                        <label for="passportNumber">Passport No</label>
+                      </div>
+                      <span *ngIf="!kycForm.controls['passportNumber'].valid && (kycForm.controls['passportNumber'].dirty && kycForm.controls['passportNumber'].touched)"
+                            class="col-sm-12 passportExpiryDate pt-1 new-pwd">Passport Number required</span>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                      <div class="form-group input-field">
+                        <input class="form-control" formControlName="lastName" id="lastName" name="lastName" required
+                               placeholder="" type="text" />
+                        <label for="lastName">Last Name</label>
+                        <span *ngIf="!kycForm.controls['lastName'].valid && (kycForm.controls['lastName'].dirty && kycForm.controls['lastName'].touched)"
+                              class="col-sm-12 form-input-error pt-1 new-pwd">Last name required</span>
+                      </div>
+                      <div class="form-group input-field">
+                        <input class="form-control" formControlName="nationality" id="nationality" name="nationality"
+                          placeholder="" type="text" />
+                        <label for="nationality">Nationality</label>
+                        <span *ngIf="!kycForm.controls['nationality'].valid && (kycForm.controls['nationality'].dirty && kycForm.controls['nationality'].touched)"
+                              class="col-sm-12 form-input-error pt-1 new-pwd">Nationality required</span>
+                      </div>
+                      <div class="form-group input-field">
+                        <input class="form-control" formControlName="city" id="city" name="city" placeholder="" type="text" />
+                        <label for="city">City</label>
+                        <span *ngIf="!kycForm.controls['city'].valid && (kycForm.controls['city'].dirty && kycForm.controls['city'].touched)"
+                              class="col-sm-12 form-input-error pt-1 new-pwd">City required</span>
+                      </div>
+                      <div class="form-group input-field">
+                        <input class="form-control" formControlName="postalCode" id="postalCode" name="postalCode"
+                          placeholder="" type="text" />
+                        <label for="postalCode">Postal Code</label>
+                        <span *ngIf="!kycForm.controls['postalCode'].valid && (kycForm.controls['postalCode'].dirty && kycForm.controls['postalCode'].touched)"
+                              class="col-sm-12 form-input-error pt-1 new-pwd">Postal Code required</span>
+                      </div>
+                      <div class="form-group input-field">
+                        <div class="input-group inputdate-picker d-inline-flex ">
+                          <input class="form-control" placeholder="yyyy-mm-dd" name="dp" formControlName="passportExpiryDate"  ngbDatepicker #de="ngbDatepicker">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary calendar" (click)="de.toggle()" type="button"> <i class="fa fa-calendar" aria-hidden="true"></i></button>
+                          </div>
+                          <span *ngIf="!kycForm.controls['passportExpiryDate'].valid && (kycForm.controls['passportExpiryDate'].dirty && kycForm.controls['passportExpiryDate'].touched)"
+                                class="col-sm-12 form-input-error pt-1 new-pwd">Passport Expiry Date required</span>
+                        </div>
+
+                        <!--<input class="form-control" formControlName="passportExpiryDate" id="passportExpiryDate" name="passportExpiryDate" placeholder=""-->
+                          <!--type="text" />-->
+                        <!--<label for="passportExpiryDate">Passport Expiry Date</label>-->
+
+                      </div>
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="form-group input-field">
+                        <div class="dark-button">
+                          <img class="upload" src="/assets/images/upload.svg"> UPLOAD PASSPORT
+                          <input type="file" class="uploadbtn" accept="image/*, application/pdf" id="files"
+                                 #passportImage (change)="validatePassport(); fileEvent($event,'file-name')"  name="passportImage" formControlName="passportImage">
+                        </div>
+
+                      </div>
+                      <div class="pt-3 form-group">
+                        <h3>Additional Documents Required for Verification</h3>
+                        <p>Kindly upload the following documents for verification.</p>
+                        <p>If you do not possess all the required documents, you can save this session and continue
+                          later.</p>
+
+                        <div class="form-group input-field">
+                          <div class="dark-button">
+                            <img class="upload" src="/assets/images/upload.svg"> UPLOAD DOCUMENT <sup>1</sup>
+                            <input type="file" accept="image/*, application/pdf" id="files" class="uploadbtn"
+                                   #proofImage (change)="validateProof(); fileEvent($event,'file-name')"  name="proofImage" formControlName="proofImage">
+                          </div>
+
+                        </div>
+                        <div class="form-group input-field">
+                          <ng-select class="selected-box" [items]="defaultBindingsList" formControlName="docType1">
+                          </ng-select>
+                        <span *ngIf="!kycForm.controls['docType1'].valid && (kycForm.controls['docType1'].dirty && kycForm.controls['docType1'].touched)"
+                              class="col-sm-12 form-input-error pt-1 new-pwd">Document Type required</span>
+
+                        </div>
+
+                        <div class="form-group input-field">
+                          <div class="dark-button">
+                            <img class="upload" src="/assets/images/upload.svg"> UPLOAD DOCUMENT <sup>2</sup>
+                            <input type="file" accept="image/*, application/pdf" id="files" class="uploadbtn"
+                                   #identityImage (change)="validateIdentity(); fileEvent($event,'file-name')"  name="identityImage" formControlName="identityImage">
+                          </div>
+
+                        </div>
+                        <div class="form-group input-field">
+                          <ng-select class="selected-box" [items]="defaultBindingsList" formControlName="docType2">
+                          </ng-select>
+                          <span *ngIf="!kycForm.controls['docType2'].valid && (kycForm.controls['docType2'].dirty && kycForm.controls['docType2'].touched)"
+                                class="col-sm-12 form-input-error pt-1 new-pwd">Document Type required</span>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bottom_payment ">
+                    <button class="btn mt-3 light-button" type="submit">
+                      SAVE SESSION
+                    </button>
+                    <button class="btn mt-3 light-button" type="submit" [disabled]="kycForm.invalid" >
+                      SUBMIT
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- common layout start  -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-sidenav">
+    <app-righttmenu></app-righttmenu>
+  </div>
+</div>
+<!-- common layout end  -->

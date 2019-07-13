@@ -1,0 +1,112 @@
+<!-- ** note : please paste the common layout for all component ********-->
+<!--** common layout start ** -->
+<div class="container-fluid dashboard-root p-0" >
+
+  <div class="main-section">
+    <app-header></app-header>
+    <div class="container">
+      
+    <div class="bg-dashboard" >
+      <div class="row bg-dashboard">
+        <div class="col">
+          <div class="dashboard-body pt-2">
+            <!-- common layout end -->
+             <div class="breadcrumbs mt-1">
+                 <a href="" class="btn btn-secondary"><i class="fa fa-back"></i>Back</a>
+                 <a href="" class="ml-2 nav-link d-inline p-0" >Entity Management</a> /
+                 <a href="" class="nav-link d-inline  p-0" >Company</a> /
+                 Add
+             </div>
+             <div class="heading-bg">
+                <h5>New Company Setup</h5>
+             </div>  
+             <div class="row">
+                <div class="col-3">
+                    <app-leftmenu></app-leftmenu>  
+                 </div>    
+                 <div class="col-9">
+                  <form>
+                    <h4 class="mt-3">GENERAL</h4>
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Company Name</label>
+                      <div class="col-sm-4">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Location</label>
+                      <div class="col-sm-4">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                      </div>
+                    </div>
+                    <hr>
+                    <h4 class="mt-3">COMPANY LOGO</h4>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-12 col-form-label">Select an image file on your computer(4MB Max) </label>
+                        <div class="col-sm-4">
+                          <input type="file" class="form-control" id="companyLogo" >
+                        </div>
+                      </div>
+                      <hr>
+                      <h4 class="mt-3">DETAILS</h4>
+                    <div class="form-group row">
+                      <label for="companyAddress" class="col-sm-2 col-form-label">Company Address</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="companyAddress" placeholder="Address">
+                        <p class="mt-3"><a href="" class="text-primary"><i class='fa fa-map-marker'></i></a> Find The Location On Google Map</p>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="companyCity" class="col-sm-2 col-form-label">City</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="companyCity" placeholder="City">
+                      </div>
+                    </div>                 
+                    <div class="form-group row">
+                      <label for="companyState" class="col-sm-2 col-form-label">State</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="companyState" placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="companZip" class="col-sm-2 col-form-label">ZIP Code</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="companZip" placeholder="ZIP Code">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="phoneNumber" class="col-sm-2 col-form-label">Phone Number</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="phoneNumber" placeholder="Phone Number">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="contactPerson" class="col-sm-2 col-form-label">Contact Person</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="contactPerson" placeholder="Contact Person">
+                      </div>
+                    </div>
+                    <hr>
+                    <hr>
+                    <div class="form-group row">
+                       <div class="col-sm-6">
+                         <button type="button" class="btn btn-secondary">Cancel</button>
+                       </div>
+                        <div class="col-sm-6 text-right">
+                            <button type="button" class="btn btn-primary">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                 </div>     
+             </div>    
+            </div>
+            
+            <!-- common layout start  -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  </div>
+<!-- common layout end  -->

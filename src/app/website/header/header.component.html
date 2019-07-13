@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-sm header-blk">
+  <a class="navbar-brand logo-img" routerLink="/landing">
+    <img src="assets/images/logo-medium.png" alt="TOKENOX" title="TOKENOX" />
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          PROCESS <span>How does it work?</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          PRICING <span>What does it cost?</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          PARTNERS <span>Become a partner.</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          TEAM <span>We make it happen. </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{verficaionPageMenu == 'verificaionPage' ? 'menu_active' : ' '}}" [routerLinkActive]="'menu_active'"
+          routerLink="/register">
+          REGISTER <span>Create an account.</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLinkActive]="'menu_active'" routerLink="/login">
+          LOGIN <span>Access your account.</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="overlay" (click)="clickEvent()" [ngClass]="status ? 'view_menu1' : 'close_menu1'"></div>
+<div class="mobile_menu" [ngClass]="status ? 'view_menu' : 'close_menu'">
+  <div class="sidemenu "><span (click)="clickEvent()"><i class="blink"></i></span></div>
+
+  <div class="col-sm-12 scroll_overlay">
+    <div class="row side_bar_div">
+
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                PROCESS <span>How does it work?</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                PRICING <span>What does it cost?</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                PARTNERS <span>Become a partner.</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                TEAM <span>We make it happen. </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{verficaionPageMenu == 'verificaionPage' ? 'menu_active' : ' '}}" [routerLinkActive]="'menu_active'"
+                routerLink="/register">
+                REGISTER <span>Create an account.</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLinkActive]="'menu_active'" routerLink="/login">
+                LOGIN <span>Access your account.</span>
+              </a>
+            </li>
+          </ul>
+
+    </div>
+  </div>
+</div>

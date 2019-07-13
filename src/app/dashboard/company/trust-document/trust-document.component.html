@@ -1,0 +1,227 @@
+<!-- ** note : please paste the common layout for all component ********-->
+<!--** common layout start ** -->
+<div class="container-fluid dashboard-root p-0" [class]="authService.globalSidebarLeft?'container-fluid dashboard-root p-0 right-close left-open ':(authService.globalSidebarRight?' container-fluid dashboard-root p-0 right-open left-close':'container-fluid dashboard-root p-0 left-close right-close')">
+  <div class="left-sidenav">
+    <app-leftmenu></app-leftmenu>
+  </div>
+  <div class="main-section">
+    <app-header></app-header>
+    <div class="bg-dashboard" slimScroll [options]="opts" style="height: 820px;">
+      <div class="row bg-dashboard">
+        <div class="col">
+          <div class="dashboard-body pt-2">
+            <!-- common layout end -->
+            <div class="row">
+              <div class="col-12 payment_div">
+                <span class="payment_span">
+                  <a href=""><i class="fa fa-chevron-left"></i>Sign Trust Documents</a>
+                </span>
+              </div>
+              <div class="col-12 pl-5 pr-5 mt-4 payment_inner">
+                <div class="keepook-form">
+                  <h3>Trust Establishment Documents</h3>
+                  <p>Please sign the following documents in order to setup your trust</p>
+                  <div class="col-12 pt-4 pb-4">
+                    <div class="row inner_div mb-2">
+                      <div class="col-sm-12 col-md-7 col-lg-8 d-flex align-items-center">
+                        <span>Trust Deed</span>
+                      </div>
+                      <div class="col-sm-12 col-md-5 col-lg-4 d-flex align-items-center pr-0">
+                        <button type="submit" class="btn  ">
+                          VIEW & SIGN
+                        </button>
+                      </div>
+                    </div>
+                    <div class="row inner_div mb-2">
+                      <div class="col-sm-12 col-md-7 col-lg-8 d-flex align-items-center">
+                        <span>Letter of Indemnity</span>
+                      </div>
+                      <div class="col-sm-12 col-md-5 col-lg-4 d-flex align-items-center pr-0">
+                        <button type="submit" class="btn  ">
+                          VIEW & SIGN
+                        </button>
+                      </div>
+                    </div>
+                    <div class="row inner_div mb-2">
+                      <div class="col-sm-12 col-md-7 col-lg-8 d-flex align-items-center">
+                        <span>Good Standing Certificate</span>
+                      </div>
+                      <div class="col-sm-12 col-md-5 col-lg-4 d-flex align-items-center pr-0">
+                        <button type="submit" class="btn  ">
+                          VIEW & SIGN
+                        </button>
+                      </div>
+                    </div>
+                    <div class="row inner_div mb-2">
+                      <div class="col-sm-12 col-md-7 col-lg-8 d-flex align-items-center">
+                        <span>Form A</span>
+                      </div>
+                      <div class="col-sm-12 col-md-5 col-lg-4 d-flex align-items-center pr-0">
+                        <button type="submit" class="btn  ">
+                          VIEW & SIGN
+                        </button>
+                      </div>
+                    </div>
+                    <div class="row inner_div mb-2">
+                      <div class="col-sm-12 col-md-7 col-lg-8 d-flex align-items-center">
+                        <span>Form K</span>
+                      </div>
+                      <div class="col-sm-12 col-md-5 col-lg-4 d-flex align-items-center pr-0">
+                        <button type="submit" class="btn  ">
+                          VIEW & SIGN
+                        </button>
+                      </div>
+                    </div>
+                    <div class="row inner_div mb-2">
+                      <div class="col-sm-12 col-md-7 col-lg-8 d-flex align-items-center">
+                        <span>Form Z</span>
+                      </div>
+                      <div class="col-sm-12 col-md-5 col-lg-4 d-flex align-items-center pr-0">
+                        <button type="submit" class="btn  ">
+                          VIEW & SIGN
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 pt-4 pb-4 video_con mt-5">
+                    <div class="row  mb-2">
+                      <div class="col-md-8 d-flex align-items-center">
+                        <div class="row">
+                          <h3 class="w-100">Trust Establishment Fund</h3>
+                          <p>Minimum amount of US$ 500 is required in order to setup your trust.
+                            Clicking Setup Trust will redirect you to a payment portal in order to transfer this
+                            amount.</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4 d-flex align-items-center pr-0">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <ng-select class="selected-box" [items]="defaultBindingsList" [(ngModel)]="selectedCity">
+                      </ng-select>
+                    </div>
+                  </div>
+                  <div class="bottom_payment ">
+                    <button type="submit" class="btn mt-3 light-button">
+                      SAVE SESSION
+                    </button>
+                    <button type="submit" class="btn mt-3 light-button btn-dark">
+                      SUBMIT
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 pl-5 pr-5 mt-4 payment_inner">
+                <div class="keepook-form">
+                  <h3>Trust Establishment Documents</h3>
+                  <p>Please sign the following documents in order to setup your trust</p>
+                  <div class="col-12 pt-4 pb-4">
+                    <div class="row inner_div mb-2">
+                      <div class="col-sm-12 col-md-7 col-lg-8 d-flex align-items-center">
+                        <span>Trust Deed</span>
+                      </div>
+                      <div class="col-sm-12 col-md-5 col-lg-4 d-flex align-items-center pr-0">
+                        <div class="right-div">
+                            <span class="left-img"><img  src="assets/images/dashboard/chek-green.svg">Signed</span>
+                            <span><img src="assets/images/eye.svg"></span>
+                            <span><img src="assets/images/download.svg"></span>
+                        </div>
+                       </div>
+                    </div>
+                    <div class="row inner_div mb-2">
+                      <div class="col-sm-12 col-md-7 col-lg-8 d-flex align-items-center">
+                        <span>Letter of Indemnity</span>
+                      </div>
+                      <div class="col-sm-12 col-md-5 col-lg-4 d-flex align-items-center pr-0">
+                          <div class="right-div">
+                              <span class="left-img"><img  src="assets/images/dashboard/chek-green.svg">Signed</span>
+                              <span><img src="assets/images/eye.svg"></span>
+                              <span><img src="assets/images/download.svg"></span>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="row inner_div mb-2">
+                      <div class="col-sm-12 col-md-7 col-lg-8 d-flex align-items-center">
+                        <span>Good Standing Certificate</span>
+                      </div>
+                      <div class="col-sm-12 col-md-5 col-lg-4 d-flex align-items-center pr-0">
+                          <div class="right-div">
+                              <span class="left-img"><img  src="assets/images/dashboard/chek-green.svg">Signed</span>
+                              <span><img src="assets/images/eye.svg"></span>
+                              <span><img src="assets/images/download.svg"></span>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="row inner_div mb-2">
+                      <div class="col-sm-12 col-md-7 col-lg-8 d-flex align-items-center">
+                        <span>Form A</span>
+                      </div>
+                      <div class="col-sm-12 col-md-5 col-lg-4 d-flex align-items-center pr-0">
+                          <div class="right-div">
+                              <span class="left-img"><img  src="assets/images/dashboard/chek-green.svg">Signed</span>
+                              <span><img src="assets/images/eye.svg"></span>
+                              <span><img src="assets/images/download.svg"></span>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="row inner_div mb-2">
+                      <div class="col-sm-12 col-md-7 col-lg-8 d-flex align-items-center">
+                        <span>Form K</span>
+                      </div>
+                      <div class="col-sm-12 col-md-5 col-lg-4 d-flex align-items-center pr-0">
+                          <div class="right-div">
+                              <span class="left-img"><img  src="assets/images/dashboard/chek-green.svg">Signed</span>
+                              <span><img src="assets/images/eye.svg"></span>
+                              <span><img src="assets/images/download.svg"></span>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="row inner_div mb-2">
+                      <div class="col-sm-12 col-md-7 col-lg-8 d-flex align-items-center">
+                        <span>Form Z</span>
+                      </div>
+                      <div class="col-sm-12 col-md-5 col-lg-4 d-flex align-items-center pr-0">
+                          <div class="right-div">
+                              <span class="left-img"><img  src="assets/images/dashboard/chek-green.svg">Signed</span>
+                              <span><img src="assets/images/eye.svg"></span>
+                              <span><img src="assets/images/download.svg"></span>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 pt-4 pb-4 video_con mt-5">
+                    <div class="row  mb-2">
+                      <div class="col-md-8 d-flex align-items-center">
+                        <div class="row">
+                          <h3 class="w-100">Trust Establishment Fund</h3>
+                          <p>Minimum amount of US$ 500 is required in order to setup your trust.
+                            Clicking Setup Trust will redirect you to a payment portal in order to transfer this
+                            amount.</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4 d-flex align-items-center pr-0">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bottom_payment ">
+                    <button type="submit" class="btn mt-3 light-button">
+                      SAVE SESSION
+                    </button>
+                    <button type="submit" class="btn mt-3 light-button btn-dark" >
+                      SUBMIT
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- common layout start  -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-sidenav">
+    <app-righttmenu></app-righttmenu>
+  </div>
+</div>
+<!-- common layout end  -->

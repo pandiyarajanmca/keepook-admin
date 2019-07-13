@@ -1,0 +1,28 @@
+<!-- ** note : please paste the common layout for all component ********-->
+<!--** common layout start ** -->
+<div class="container-fluid dashboard-root p-0" [class]="authService.globalSidebarLeft?'container-fluid dashboard-root p-0 right-close left-open ':(authService.globalSidebarRight?' container-fluid dashboard-root p-0 right-open left-close':'container-fluid dashboard-root p-0 left-close right-close')">
+  <div class="left-sidenav">
+    <app-leftmenu></app-leftmenu>
+  </div>
+  <div class="main-section">
+    <app-header></app-header>
+    <div class="bg-dashboard" slimScroll [options]="opts" style="height: 820px;">
+      <div class="row bg-dashboard">
+        <div class="col">
+          <div class="dashboard-body p-2">
+            <!-- common layout end -->
+            <h1 class="mt-5 text-center">
+              Welcome To support Page
+            </h1>
+            <p class="mt-5 text-center"> For more help contact</p>
+            <!-- common layout start  -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-sidenav">
+    <app-righttmenu></app-righttmenu>
+  </div>
+</div>
+<!-- common layout end  -->

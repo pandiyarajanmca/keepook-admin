@@ -1,0 +1,101 @@
+<app-header></app-header>
+<section class="container-fluid bg-dashboard">
+  <div class="row">
+    <div class="container ">
+      <div class="row">
+
+        <div class="register-whole-section">
+          <div class="col-sm-12 col-md-6 col-lg-7 col-xl-8 register-left-blk">
+            <h1>
+              Register now and <br />
+              explore our platform.
+            </h1>
+            <p>
+              Create an account for free and learn more about<br />
+              what you can accomplish with TokenOx.
+            </p>
+            <div class="col-sm-12 mt-5 mb-5 p-0">
+              <a href="javascript:void(0)" class="dark-button" (click)="signInWithGoogle()">
+                <i class="fa fa-google"></i> REGISTER WITH GOOGLE
+              </a>
+            </div>
+            <div class="app-logo-section">
+              <div class="google-app-icon">
+                <img src="assets/images/google-play.png" alt="" title="" />
+                <span>Coming Soon</span>
+              </div>
+              <div class="ios-app-icon">
+                <img src="assets/images/ios-app.png" alt="" title="" />
+                <span>Coming Soon</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6  col-lg-5 col-xl-4 register-right-blk">
+            <form class="keepook-form" [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+              <div class="form-group input-field">
+                <input type="text" class="form-control" id="name" placeholder="" formControlName="name" name="name"
+                  required />
+                <label for="name">Full Legal Name</label>
+                <span *ngIf="!registerForm.controls['name'].valid && (registerForm.controls['name'].touched && registerForm.controls['name'].dirty)"
+                  class="col-sm-12 form-input-error pt-1">Full Legal Name Required</span>
+              </div>
+              <div class="form-group input-field">
+                <input type="email" class="form-control" id="email" placeholder="" formControlName="email" name="email"
+                  required />
+                <label for="email">E-mail</label>
+                <span *ngIf="!registerForm.controls['email'].valid && (registerForm.controls['email'].touched && registerForm.controls['email'].dirty)"
+                  class="col-sm-12 form-input-error pt-1">Email Required</span>
+              </div>
+              <div class="form-group  input-field">
+                <select class="form-control" formControlName="country" name="country" [formControl]="registerForm.controls['country']"
+                  required>
+
+                  <option value="null">Select Country of Operations</option>
+                  <option *ngFor="let operation of countries" value='{{operation.id}}'>
+                    {{operation.name}} </option>
+                </select>
+                <label for="country">Country</label>
+                <span *ngIf="!registerForm.controls['country'].valid && (registerForm.controls['country'].touched && registerForm.controls['country'].dirty)"
+                  class="col-sm-12 form-input-error pt-1">Invalid Country of Operations</span>
+              </div>
+              <div class="form-group input-field">
+                <input type="password" class="form-control" id="password" placeholder="" formControlName="password"
+                  name="password" required />
+                <label for="password">Password</label>
+                <span *ngIf="!registerForm.controls['password'].valid && (registerForm.controls['password'].touched && registerForm.controls['password'].dirty)"
+                  class="col-sm-12 form-input-error pt-1">Password Required</span>
+              </div>
+              <div class="form-group input-field">
+                <input type="password" class="form-control" id="confirmPassword" placeholder="" formControlName="confirmPassword"
+                  name="confirmPassword" required />
+                <label for="confirmPassword">Confirm Password</label>
+                <span *ngIf="(registerForm.controls['password'].value != registerForm.controls['confirmPassword'].value)  && (registerForm.controls['confirmPassword'].dirty && registerForm.controls['confirmPassword'].touched)"
+                  class="col-sm-12 form-input-error pt-1">Password and confirm password mismatch</span>
+              </div>
+              <div class="form-group checkbox-blk mt-4 mb-4 ">
+                <label class="form_checkbox">
+                  I have read and agree to the
+                  <a href="">Terms & Conditions</a>
+                  <input type="checkbox" id="termsCheck" name="termsCheck" formControlName="termsCheck" value="1"
+                    required />
+                  <span class="checkmark"></span>
+                  <span *ngIf="!registerForm.controls['termsCheck'].valid && (registerForm.controls['termsCheck'].touched && registerForm.controls['termsCheck'].dirty)"
+                    class="col-sm-12 form-input-error pt-1">Terms & Conditions Required</span>
+                </label>
+              </div>
+              <button type="submit" class="btn mt-3 light-button" [disabled]="registerForm.invalid">
+                CREATE ACCOUNT
+              </button>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
+
+<swal #errorSwal title="ERROR" text="{{errMsg}}" type="error" [focusCancel]="true"></swal>
+<swal #successSwal title="SUCCESS!" text="{{successMsg}}" type="success" [focusCancel]="true"></swal>

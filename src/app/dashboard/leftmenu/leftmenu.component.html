@@ -1,0 +1,108 @@
+<!-- <ul class="nav flex-column left-menu" >
+  
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/dashboard/home" routerLinkActive="active" > -->
+      <!-- <img src="/assets/images/dashboard/home-active.svg" class="icon1 mr-1"> -->
+      <!-- <img src="/assets/images/dashboard/home.svg" class="icon mr-1"> -->
+       <!-- <span>Company</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/dashboard/account" routerLinkActive="active" >
+      <img src="/assets/images/dashboard/account-active.svg" class="icon1 mr-1">
+      <img src="/assets/images/dashboard/account.svg" class="icon mr-1"> <span>Organization Unit</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/dashboard/my-trust" routerLinkActive="active" >
+      <img src="/assets/images/dashboard/mytrust-active.svg" class="icon1 mr-1">
+      <img src="/assets/images/dashboard/mytrust.svg" class="icon mr-1"> <span>Department</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/dashboard/assets" routerLinkActive="active" >
+      <img src="/assets/images/dashboard/assets-active.svg" class="icon1 mr-1">
+      <img src="/assets/images/dashboard/assets.svg" class="icon mr-1"> <span>User Groups</span></a>
+  </li>  
+</ul> -->
+
+
+
+<ngb-accordion [closeOthers]="true" activeIds="static-1">
+    <ngb-panel id="static-1">
+        <ng-template ngbPanelTitle>
+            <span> Company</span>
+          </ng-template>
+      <ng-template ngbPanelContent>
+        <ul>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/entity/create" routerLinkActive="active" >
+                  <img src="/assets/images/dashboard/account-active.svg" class="icon1 mr-1"> <span>Create Company</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/entity/create" routerLinkActive="active" >
+                  <img src="/assets/images/dashboard/account-active.svg" class="icon1 mr-1"> <span>Edit Company</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/entity/create" routerLinkActive="active" >
+                  <img src="/assets/images/dashboard/account-active.svg" class="icon1 mr-1"> <span>View Company</span></a>
+            </li>
+        </ul>
+        
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel id="static-2">
+      <ng-template ngbPanelTitle>
+        <span> Organization Unit </span>
+      </ng-template>
+      <ng-template ngbPanelContent>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/entity/create" routerLinkActive="active" >
+                <img src="/assets/images/dashboard/account-active.svg" class="icon1 mr-1"> <span>Create Company</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/entity/create" routerLinkActive="active" >
+                <img src="/assets/images/dashboard/account-active.svg" class="icon1 mr-1"> <span>Edit Company</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/entity/create" routerLinkActive="active" >
+                <img src="/assets/images/dashboard/account-active.svg" class="icon1 mr-1"> <span>View Company</span></a>
+          </li>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel id="static-3" >
+        <ng-template ngbPanelTitle>
+            <span> Department</span>
+          </ng-template>
+      <ng-template ngbPanelContent>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/entity/create" routerLinkActive="active" >
+                <img src="/assets/images/dashboard/account-active.svg" class="icon1 mr-1"> <span>Create Company</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/entity/create" routerLinkActive="active" >
+                <img src="/assets/images/dashboard/account-active.svg" class="icon1 mr-1"> <span>Edit Company</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/entity/create" routerLinkActive="active" >
+                <img src="/assets/images/dashboard/account-active.svg" class="icon1 mr-1"> <span>View Company</span></a>
+          </li>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel id="static-4" >
+        <ng-template ngbPanelTitle>
+            <span> User Groups</span>
+          </ng-template>
+      <ng-template ngbPanelContent>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/entity/create" routerLinkActive="active" >
+                <img src="/assets/images/dashboard/account-active.svg" class="icon1 mr-1"> <span>Create Company</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/entity/create" routerLinkActive="active" >
+                <img src="/assets/images/dashboard/account-active.svg" class="icon1 mr-1"> <span>Edit Company</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/entity/create" routerLinkActive="active" >
+                <img src="/assets/images/dashboard/account-active.svg" class="icon1 mr-1"> <span>View Company</span></a>
+          </li>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>

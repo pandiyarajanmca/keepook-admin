@@ -1,0 +1,69 @@
+<!-- ** note : please paste the common layout for all component ********-->
+<!--** common layout start ** -->
+<div class="container-fluid dashboard-root p-0" [class]="authService.globalSidebarLeft?'container-fluid dashboard-root p-0 right-close left-open ':(authService.globalSidebarRight?' container-fluid dashboard-root p-0 right-open left-close':'container-fluid dashboard-root p-0 left-close right-close')">
+  <div class="left-sidenav">
+    <app-leftmenu></app-leftmenu>
+  </div>
+  <div class="main-section">
+    <app-header></app-header>
+    <div class="bg-dashboard" slimScroll [options]="opts" style="height: 820px;">
+      <div class="row bg-dashboard">
+        <div class="col">
+          <div class="dashboard-body p-2">
+            <!-- common layout end -->
+            <div class="row blue-border-top bg-white mt-2 page-notification">
+              <h2 class="col-sm-8 pt-2 pl-4 pt-3 pb-2">Notification</h2>
+              <span class="all-time col-sm-4 pt-3 pb-2 text-right pr-4">All Time<i class="fa fa-calendar" aria-hidden="true"></i></span>
+              <div class="col-sm-12 p-0 d-sm-none d-md-none d-lg-block">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Description</th>
+                      <th scope="col">Data</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let demo of tableDemo; let i = index" class="{{demo.Status}}">
+                      <td>{{demo.Description}}</td>
+                      <td>{{demo.Date}}</td>
+                      <td>{{demo.Action}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div *ngIf="!tableDemo || tableDemo.length === 0">
+                  <p class="no-record p-1">You have no recent notifications.</p>
+                </div>
+                <div *ngIf="!tableDemo || tableDemo.length > 1" class="data-pagination gol text-right">
+                  <table-pagination (op)="paginate($event)" [total]="200"> </table-pagination>
+                </div>
+              </div>
+              <div class="col-sm-12 p-0 d-md-block d-lg-none">
+                <table class="table-rep-label col-12">
+                  <tbody>
+                    <tr *ngFor="let demo of tableDemo; let i = index" class="{{demo.Status}}">
+                      <td data-label="Description">{{demo.Description}}</td>
+                      <td data-label="Date">{{demo.Date}}</td>
+                      <td>{{demo.Action}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div *ngIf="!tableDemo || tableDemo.length === 0">
+                  <p class="pb-3">You have no recent notifications.</p>
+                </div>
+                <div *ngIf="!tableDemo || tableDemo.length > 5" class="data-pagination gol text-right">
+                  <table-pagination (op)="paginate($event)" [total]="200"> </table-pagination>
+                </div>
+              </div>
+            </div>
+            <!-- common layout start  -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-sidenav">
+      <app-righttmenu></app-righttmenu>
+    </div>
+  </div>
+</div>
+<!-- common layout end  -->

@@ -1,0 +1,21 @@
+@import "../../../variables.css";
+.profile {
+  .change {
+    img {
+      height: 80px;
+    }
+  }
+
+  .inner_div {
+    .btn {
+      width: 33px;
+      text-align: right;
+      background: $bg-light-grey;
+      color: $heading-color;
+    }
+    i{
+      font-size: 18px;
+    }
+  }
+
+}

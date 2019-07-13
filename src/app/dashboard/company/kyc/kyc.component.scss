@@ -1,0 +1,14 @@
+@import "../../../../variables.css";
+
+.kyc-from-page {
+  p {
+    margin-bottom: .5rem!important;
+  }
+  .payment_span {
+    i {
+      font-size: $f-20;
+      vertical-align: bottom;
+      padding-right: 8px;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import "../../../variables.css";
+@import "../../../mixins.css";
+.but-li {
+    img {
+    height: 30px;
+}
+
+}.form-control{
+    // height: 23px;
+    background: transparent;
+    // color: 
+}
+.bg-light-submenu{
+    background: #dddddd;
+    text-align: center;
+    .nav-item{
+        padding: 8px 0;
+        display: block;
+    }
+    &.active{
+        background: #612684;
+    }
+}

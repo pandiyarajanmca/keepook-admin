@@ -1,0 +1,332 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "variables";
+@import "mixins";
+
+@font-face {
+  font-family: "Baskerville";
+  src: url("/assets/fonts/Baskerville.ttc");
+}
+
+@font-face {
+  font-family: "Baskerville-italic";
+  src: url("/assets/fonts/Baskervville-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("/assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Medium";
+  src: url("/assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Light";
+  src: url("/assets/fonts/Roboto/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Raleway-Bold";
+  src: url("/assets/fonts/raleway/Raleway-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Raleway-SemiBold";
+  src: url("/assets/fonts/raleway/Raleway-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Raleway-Medium";
+  src: url("/assets/fonts/raleway/Raleway-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Raleway-Regular";
+  src: url("/assets/fonts/raleway/Raleway-Regular.ttf") format("truetype");
+}
+
+body {
+  font: 100% $font-semibold;
+  color: $primary-color;
+}
+
+h2 {
+  font-size: $f-20;
+  font-family: "Raleway-Medium";
+}
+
+h3 {
+  font-size: $f-16;
+  font-family: "Raleway-Medium";
+}
+h4 {
+  font-size: $f-14;
+}
+
+p {
+  font-size: $f-12;
+  color: $pargraph;
+}
+
+.modal-dialog-centered {
+  max-width: 400px !important;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $heading-color;
+
+  &:hover {
+    color: $pargraph;
+  }
+}
+
+.bg-white {
+  background: $bg-white;
+}
+
+
+// scroll bar design
+::-webkit-scrollbar {
+  width: 0.4em;
+  height: 0.4em;
+}
+::-webkit-scrollbar-track {
+  @include box-shadow(0, 0, 7px, rgba(0, 0, 0, 0.2), "true");
+}
+::-webkit-scrollbar-thumb {
+  background-color: $menu-color;
+  outline: 1px solid $menu-color;
+  @include border-radius(10px);
+}
+//End scroll bar design
+
+.dashboard-root {
+  font-family: "Raleway-SemiBold";
+  font-size: 12px;
+}
+
+.font-ra-medium {
+  font-family: "Raleway-Medium";
+  font-size: 12px;
+}
+
+.font-ra-regular {
+  font-family: "Raleway-regular";
+  font-size: 12px;
+}
+
+.blue-border-top {
+  border-top: solid 5px $border-color;
+}
+
+.blue-border-left {
+  border-top: solid 5px $border-color;
+}
+
+.blue-border-bottom {
+  border-top: solid 5px $border-color;
+}
+
+.upload {
+  width: 15px;
+  height: 15px;
+}
+
+input.uploadbtn {
+  position: absolute;
+  opacity: 0;
+  right: 0;
+  top: 0;
+}
+
+// data picker
+button.calendar,
+button.calendar:active {
+  font-family: $font-regular;
+  background-position: center;
+}
+
+.inputdate-picker {
+  font-family: $font-regular;
+  font-size: $f-12;
+}
+
+/* Forms textfiled design and animations*/
+.keepook-form {
+  .form-input-error{
+    color: red;
+    font-size: 10px;
+    position: absolute;
+    top: 30px;
+      width: 100%;
+    float: left;
+
+  }
+
+  .input-field {
+    position: relative;
+    width: 320px;
+    height: 50px;
+    line-height: 50px;
+    @include device-sm {
+      width: 100%;
+    }
+    label {
+      position: absolute;
+      top: -5px;
+      left: 10px;
+      // width: 100%;
+      color: $button-bg-color;
+      @include transition(0.2s all ease-in-out);
+      cursor: text;
+      font-size: 13px;
+      font-family: "Raleway-Medium";
+    }
+    input,
+    textarea, select {
+      //width: 100%;
+      border: 0;
+      outline: 0;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid $active-border-clr;
+      box-shadow: none;
+      color: $button-bg-color;
+      background: transparent;
+      font-family: "Raleway-Medium";
+      font-size: 14px;
+      padding-left: 10px;
+      @include border-radius(0);
+
+      &:invalid {
+        outline: 0;
+      }
+
+      &:focus {
+        border-color: $button-bg-color;
+      }
+    }
+  }
+
+  input.ng-valid,
+  input.ng-dirty,
+  select.ng-valid,
+  select.ng-dirty,
+  textarea.ng-valid,
+  textarea.ng-dirty {
+    border-color: $button-bg-color;
+  }
+
+  input:focus~label,
+  input.ng-valid~label,
+  input.ng-dirty~label,
+  select:focus~label,
+  select.ng-valid~label,
+  select.ng-dirty~label,
+  textarea:focus~label,
+  textarea.ng-valid~label,
+  textarea.ng-dirty~label {
+    font-size: 12px;
+    top: -28px;
+    color: $pargraph;
+    font-family: "Raleway-Bold";
+    @include transition(0.2s all ease-in-out);
+  }
+
+  .checkbox-blk {
+    padding-left: 10px;
+
+    .form_checkbox {
+      width: 320px;
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      font-size: 12px;
+      font-family: "Raleway-Medium";
+      @include user-select(none);
+      line-height: 16px;
+      color: $button-bg-color;
+      @include device-sm { width: 100%; }
+      &:hover input ~ .checkmark {
+        border-color: darken($active-border-clr, 10%);
+      }
+
+      a {
+        font-family: "Raleway-Bold";
+      }
+      input,
+      textarea, select {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked ~ .checkmark:after {
+          display: block;
+        }
+
+        &:checked ~ .checkmark {
+          background-color: $pargraph;
+          // border-color: #ffffff;
+        }
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 16px;
+        width: 16px;
+        background-color: #ffffff;
+        border: 1px solid $active-border-clr;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border: 1px solid #ffffff;
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.bg-gradient{
+  background: rgba(19,158,193,1);
+background: -moz-linear-gradient(left, rgba(19,158,193,1) 0%, rgba(95,40,133,1) 84%, rgba(95,40,133,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(19,158,193,1)), color-stop(84%, rgba(95,40,133,1)), color-stop(100%, rgba(95,40,133,1)));
+background: -webkit-linear-gradient(left, rgba(19,158,193,1) 0%, rgba(95,40,133,1) 84%, rgba(95,40,133,1) 100%);
+background: -o-linear-gradient(left, rgba(19,158,193,1) 0%, rgba(95,40,133,1) 84%, rgba(95,40,133,1) 100%);
+background: -ms-linear-gradient(left, rgba(19,158,193,1) 0%, rgba(95,40,133,1) 84%, rgba(95,40,133,1) 100%);
+background: linear-gradient(to right, rgba(19,158,193,1) 0%, rgba(95,40,133,1) 84%, rgba(95,40,133,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#139ec1', endColorstr='#5f2885', GradientType=1 );
+}
+
+.heading-bg{
+  background: $heading-bg-color;
+  padding: 5px;
+  color: $bg-white;
+  margin-top: 10px;
+  h5{
+    margin-bottom: 0;
+  }
+}
+
+.side-menu{
+  .card-header{
+    padding: 0;
+    margin: 0;
+}
+}

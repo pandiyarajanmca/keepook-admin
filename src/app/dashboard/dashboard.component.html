@@ -1,0 +1,43 @@
+<!-- ** note : please paste the common layout for all component ********-->
+<!--** common layout start ** -->
+<div class="container-fluid dashboard-root p-0" >
+
+  <div class="main-section">
+    <app-header></app-header>
+    <div class="container">
+      
+    <div class="bg-dashboard" >
+      <div class="row bg-dashboard">
+        <div class="col">
+          <div class="dashboard-body pt-2">
+            <!-- common layout end -->
+             <div class="breadcrumbs mt-1">
+                 <a href="" class="btn btn-secondary"><i class="fa fa-back"></i>Back</a>
+                 <a href="" class="ml-2 nav-link d-inline p-0" >Entity Management</a> /
+                 <a href="" class="nav-link d-inline  p-0" >Company</a> /
+                 Add
+             </div>
+             <div class="heading-bg">
+                <h5>New Company Setup</h5>
+             </div>  
+             <div class="row">
+                <div class="col-3">
+                    <app-leftmenu></app-leftmenu>  
+                 </div>    
+                 <div class="col-9">
+                    <div *ngIf="!Transactions || Transactions.length === 0">
+                        <p class="no-record p-1">You have no recent notifications.</p>
+                      </div>
+                 </div>    
+             </div>    
+            </div>
+            
+            <!-- common layout start  -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  </div>
+<!-- common layout end  -->

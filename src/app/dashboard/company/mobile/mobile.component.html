@@ -1,0 +1,76 @@
+<!-- ** note : please paste the common layout for all component ********-->
+<!--** common layout start ** -->
+<div class="container-fluid dashboard-root p-0" [class]="authService.globalSidebarLeft?'container-fluid dashboard-root p-0 right-close left-open ':(authService.globalSidebarRight?' container-fluid dashboard-root p-0 right-open left-close':'container-fluid dashboard-root p-0 left-close right-close')">
+  <div class="left-sidenav">
+    <app-leftmenu></app-leftmenu>
+  </div>
+  <div class="main-section">
+    <app-header></app-header>
+    <div class="bg-dashboard" slimScroll [options]="opts" style="height: 820px;">
+      <div class="row bg-dashboard">
+        <div class="col p-0">
+          <div class="dashboard-body mobile-verification">
+            <!-- common layout end -->
+            <div class="col-12 payment_div">
+              <span class="payment_span">
+                <h2><i class="fa fa-angle-left" aria-hidden="true"></i> Mobile Verification</h2>
+              </span>
+            </div>
+            <div class="col-12">
+              <form [formGroup]="myForm" novalidate (ngSubmit)="sendOtp(myForm.value)">
+                <div class="w-mob row">
+                  <int-phone-prefix [locale]="'es'" class="mobile-no" formControlName="countryCode" required></int-phone-prefix>
+                  <input class="form-control" type="number" id="mobile-No1" name="mobile-no1" formControlName='phoneNumber' required />
+                </div>
+                <button (click)="openVerticallyCentered(content)" class="btn mt-3 ml-5 p-0 rounded-0 dark-button" type="submit" [disabled]="myForm.invalid" > SEND VERIFICATION CODE </button>
+              </form>
+            </div>
+            <!-- common layout start  -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-sidenav">
+    <app-righttmenu></app-righttmenu>
+  </div>
+</div>
+<!-- common layout end  -->
+
+
+<ng-template #content let-modal>
+  <div class="blue-border-top">
+    <div class="modal-header">
+      <div class="col-12 p-0 text-center">
+        <h3 class="pt-3">Enter Verification Code</h3>
+        <!-- <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+        <p>Please enter the verification code sent to your mobile device.</p>
+      </div>
+    </div>
+    <div class="modal-body otp">
+      <input class="form-control" placeholder="0" maxlength="1" [(ngModel)]="one" />
+      <input class="form-control" placeholder="0" maxlength="1" [(ngModel)]="two" />
+      <input class="form-control" placeholder="0" maxlength="1"  [(ngModel)]="three" />
+      <input class="form-control" placeholder="0" maxlength="1" [(ngModel)]="four"  />
+      <input class="form-control" placeholder="0" maxlength="1" [(ngModel)]="five" />
+      <input class="form-control" placeholder="0" maxlength="1"  [(ngModel)]="six" />
+    </div>
+    <div class="modal-footer ">
+      <div class="bottom_payment text-center">
+        <button type="submit" (click)="verifyOtp(one + two + three + four + five + six )" class="btn mt-3 light-button btn-modal btn-extradark">
+          SUBMIT
+        </button>
+        <button type="submit" class="btn mt-3 light-button btn-modal btn-dark" (click)="hideModel()">
+          CANCEL
+        </button>
+        <span id="hidePopUp" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')"></span>
+      </div>
+    </div>
+    <p *ngIf="errVerifyOtpMessage" style="color:red;padding-left: 165px;">{{errVerifyOtpMessage}}</p>
+    <p class="text-center pt-2 pb-4">Don't see what you want? <a (click)="resendOtp()">Resend</a> a custom wish.</p>
+  </div>
+</ng-template>
+
+<swal #successSwal title="SUCCESS!" text="{{successMsg}}" type="success" [focusCancel]="true"></swal>
