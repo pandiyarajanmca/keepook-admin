@@ -6,8 +6,7 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Message} from '../_models/message';
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from '@angular/common/http';
 import * as io from 'socket.io-client';
-import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
-import {catchError, map, tap} from 'rxjs/operators';
+
 
 import {ToastrService} from 'ngx-toastr';
 

@@ -8,8 +8,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { VerificationComponent } from './verification/verification.component';
-import { ServiceUnavailableComponent } from './service-unavailable/service-unavailable.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
@@ -49,7 +47,7 @@ export function provideConfig() {
     SocialLoginModule
   ],
   declarations: [WebsiteComponent, LoginComponent, RegisterComponent, HeaderComponent, FooterComponent,
-    VerificationComponent, ServiceUnavailableComponent, ForgotPasswordComponent, ResetPasswordComponent],
+ ForgotPasswordComponent, ResetPasswordComponent],
   providers: [AuthService, TokenService, CountriesService,
     {
       provide: AuthServiceConfig,

@@ -9,15 +9,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: '../app/dashboard/dashboard.module#DashboardModule'
-  },
-  // {
-  //   path: 'admin',
-  //   loadChildren: '../app/admin/admin.module#AdminModule'
-  // },     
-  // {
-  //   path: '',
-  //   loadChildren: '../app/website/website.module#WebsiteModule'
-  // },
+  }
 ];
 
 @NgModule({

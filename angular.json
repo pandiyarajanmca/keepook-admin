@@ -27,12 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/owl.carousel/dist/assets/owl.carousel.css",
-              "./node_modules/owl.carousel/dist/assets/owl.theme.default.css",
-              "./node_modules/font-awesome-scss/scss/font-awesome.css",
-              "./node_modules/bootstrap-scss/bootstrap.css",
-              "src/variables.css",
-              "src/mixins.css",
+
               "src/styles.css"
             ],
             "scripts": [

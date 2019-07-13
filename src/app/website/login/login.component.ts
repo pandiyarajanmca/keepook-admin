@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators, FormArray, FormGroup } from '@angular/forms';
-import { variable } from '@angular/compiler/src/output/output_ast';
 import { AuthService } from '../../_service/auth.service';
 import { SwalComponent } from '@toverux/ngx-sweetalert2';
 import { TokenService } from '../../_service/token.service';
