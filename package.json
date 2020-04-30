@@ -27,7 +27,7 @@
     "boostrap": "^2.0.0",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "ng4-intl-phone": "^1.2.1",
     "ngx-owl-carousel": "^2.0.7",
     "ngx-slimscroll": "^7.0.0",
